@@ -764,17 +764,17 @@
     },
     {
         "name": "laravel/framework",
-        "version": "v5.8.29",
-        "version_normalized": "5.8.29.0",
+        "version": "v5.8.28",
+        "version_normalized": "5.8.28.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "489ae2218c7eb138caac780de584d8df9fe8160b"
+            "reference": "341fb54bea9693cada2a5b8d398621a57f82862d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/489ae2218c7eb138caac780de584d8df9fe8160b",
-            "reference": "489ae2218c7eb138caac780de584d8df9fe8160b",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/341fb54bea9693cada2a5b8d398621a57f82862d",
+            "reference": "341fb54bea9693cada2a5b8d398621a57f82862d",
             "shasum": ""
         },
         "require": {
@@ -877,7 +877,7 @@
             "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.1).",
             "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
         },
-        "time": "2019-07-16T14:05:28+00:00",
+        "time": "2019-07-09T14:00:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1383,17 +1383,17 @@
     },
     {
         "name": "nunomaduro/collision",
-        "version": "v2.1.1",
-        "version_normalized": "2.1.1.0",
+        "version": "v3.0.1",
+        "version_normalized": "3.0.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/nunomaduro/collision.git",
-            "reference": "b5feb0c0d92978ec7169232ce5d70d6da6b29f63"
+            "reference": "af42d339fe2742295a54f6fdd42aaa6f8c4aca68"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nunomaduro/collision/zipball/b5feb0c0d92978ec7169232ce5d70d6da6b29f63",
-            "reference": "b5feb0c0d92978ec7169232ce5d70d6da6b29f63",
+            "url": "https://api.github.com/repos/nunomaduro/collision/zipball/af42d339fe2742295a54f6fdd42aaa6f8c4aca68",
+            "reference": "af42d339fe2742295a54f6fdd42aaa6f8c4aca68",
             "shasum": ""
         },
         "require": {
@@ -1403,12 +1403,12 @@
             "symfony/console": "~2.8|~3.3|~4.0"
         },
         "require-dev": {
-            "laravel/framework": "5.7.*",
+            "laravel/framework": "5.8.*",
             "nunomaduro/larastan": "^0.3.0",
-            "phpstan/phpstan": "^0.10",
-            "phpunit/phpunit": "~7.3"
+            "phpstan/phpstan": "^0.11",
+            "phpunit/phpunit": "~8.0"
         },
-        "time": "2018-11-21T21:40:54+00:00",
+        "time": "2019-03-07T21:35:13+00:00",
         "type": "library",
         "extra": {
             "laravel": {
@@ -4104,7 +4104,7 @@
                 "dev-master": "1.11-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Symfony\\Polyfill\\Php72\\": ""
