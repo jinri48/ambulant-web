@@ -115,13 +115,17 @@ function btnCategory(){
 function showSelectedGuest(){
     let selected_guest_no = getStorage('selected_guest_no');
     let msg = "Selected Guest: # ";
-    console.log(selected_guest_no);
+  
     if(selected_guest_no !='' || selected_guest_no !=null){
         msg += selected_guest_no; 
         $('#selected-guest').text(msg).show();
     }else{
+
+        
         let msg = "";
         $('#selected-guest').text(msg).hide();
+        console.log(selected_guest_no);
+        redirectTo('/guest-selection');
     }
 
 }

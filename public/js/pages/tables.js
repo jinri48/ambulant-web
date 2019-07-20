@@ -6,7 +6,7 @@ $(document).ready(function () {
     }
     console.log(getStorage('table_for'));
     if(getStorage('table_for') == '' || getStorage('table_for') == null ){
-        console.log("inside " +getStorage('table_for'));
+       
         redirectTo('/table-selection');
         return;
     }
