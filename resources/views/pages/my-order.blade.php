@@ -11,6 +11,7 @@
 @section('js') 
     <script src="/js/plugins/jquery-confirm.min.js"></script>
     <script src="js/pages/my-order.js"></script>
+    <script src="js/pages/product.js"></script>
 @endsection 
  
 @section('content')

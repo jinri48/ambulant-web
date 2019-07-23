@@ -22,6 +22,7 @@ function getOrders(){
 
 function osDisplayer(header, details){
 
+
     /**
      * Checker 
      */
@@ -61,6 +62,7 @@ function osDisplayer(header, details){
             // main
             $.each(v, function(kk,vv){ 
                 if(vv.product_id == vv.main_product_id){
+                    console.log("Vatable: " + vv.is_vatable);
                     total += (vv.qty * vv.srp);
 
                     if(vv.kitchen_status != null){
@@ -75,6 +77,9 @@ function osDisplayer(header, details){
                         header_id = vv.orderslip_header_id;
                         main_product_id = vv.main_product_id;
                         sequence = vv.sequence;
+                        discount=vv.discount;
+                        discounted_price=vv.discounted_price;
+                        
                 }
             });
     
@@ -118,11 +123,40 @@ function osDisplayer(header, details){
                     if(vv.guest_type == 3){
                         os_txt += '<span class="sub-title">- Guest Type (Pwd)</span>'; 
                     }
-
                 }
             });
 
-            // Kitchen Status   
+            //discount for senior and pwd
+            $.each(v, function(kk,vv){ 
+                if(vv.product_id == vv.main_product_id){ 
+                vv.discount = 0;
+                vv.discounted_price=0;
+                var po = JSON.parse( getStorage('product_order') );
+                    
+                po.total_without_vat = (po.total/1.12);
+                po.vat = po.total_without_vat * .12 ;
+
+                if (vv.guest_type == 2 || vv.guest_type == 3 ){  
+                    vv.discount= po.total_without_vat * .20;
+
+                    vv.discounted_price = po.total_without_vat - vv.discount; 
+
+                    os_txt += '<span class="sub-title">- Discount<div class="float-right font-weight-bold"> ('+ numberWithCommas(vv.discount) +') </div></span>';
+                    os_txt += '<span class="sub-title">- Discounted Price <div class="float-right font-weight-bold"> ('+ numberWithCommas(vv.discounted_price) +') </div></span> ';
+
+                }else{
+                    vv.discount = 0;
+                    vv.discounted_price = po.total - vv.discount;
+
+                }
+                
+                setStorage('product_order', JSON.stringify(po));
+
+                }
+                });
+          
+
+            // Kitchen Status 
             if(kitchen_status != null){
                 os_txt += '<span class="sub-title">* '+ vv.kitchen_status+' *</span>'; 
             }

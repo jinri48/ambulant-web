@@ -525,12 +525,22 @@ function logicDisplay(){
     $('#grand-total').text('TOTAL : ' + numberWithCommas(grand_total));
 }
 
-$('input[type=radio][name=guest-type]').change(function() {
-    var po = JSON.parse( getStorage('product_order') );
-    po.guest_type = parseInt(this.value);
-    setStorage('product_order', JSON.stringify(po)); 
+    // show Modal for senior citizen button
+    $(document).ready(function(){
+        $(".show-modal").click(function(){
+            $("#seniormodal").modal('show');
 
-    // discount();
+        });
+    });
+
+    $('input[type=radio][name=guest-type]').change(function() {
+        var po = JSON.parse( getStorage('product_order') );
+        po.guest_type = parseInt(this.value);
+        setStorage('product_order', JSON.stringify(po)); 
+
+        // discount();
+
+        
 });
 
 // $('#guest-no').on('change', function(){
@@ -541,6 +551,7 @@ $('input[type=radio][name=guest-type]').change(function() {
 // });
 
 function discount(){
+
     var new_price = 0;
     var po = JSON.parse( getStorage('product_order') );
   
@@ -557,8 +568,10 @@ function discount(){
     }
     
     setStorage('product_order', JSON.stringify(po));
-    
-
+   
     $('#grand-total').text('TOTAL : ' + numberWithCommas(new_price));
+
+    
+ 
 }
 

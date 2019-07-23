@@ -83,8 +83,8 @@
                                         <input value="1" type="radio" name="guest-type" id="form-5-1" checked="">
                                         <label for="form-5-1">Regular</label>
                                     </div>
-                                    <div class="radio radio-inline radio-primary">
-                                        <input value="2" type="radio" name="guest-type" id="form-5-2" >
+                                    <div class="radio radio-inline radio-primary" data-toggle="modal" data-target="#seniorModal">
+                                        <input class="show-modal" value="2" type="radio" name="guest-type" id="form-5-2" >
                                         <label for="form-5-2">Senior</label>
                                     </div>
                                     <div class="radio radio-inline radio-primary">
@@ -234,5 +234,36 @@
         </div>
     </div>
 </div>  
+<!-- MODAL -->
+<div class="modal fade" id="seniormodal" tabindex="-1" role="dialog" aria-labelleby="seniormodallabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header d-flex justify-content-center bg-primary">
+        <h2 class="text-white">Senior Citizen Credentials</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">ID Number</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+
  
 @endsection
