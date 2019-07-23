@@ -6,10 +6,10 @@ $(document).ready(function(){
     }
 
     //getCategories();
-
+    
     checkIfThereIsAnActiveOrder();
-
-    showSelectedGuest();
+    
+    // showSelectedGuest();
 });
 
     function checkIfThereIsAnActiveOrder(){
@@ -32,13 +32,15 @@ $(document).ready(function(){
                     redirectTo('table');
                     return;
                 }
-                if(getStorage('selected_guest_no')==''){ 
-                    redirectTo('guest-selection');
+                if(getStorage('selected_guest_no') == '' || getStorage('selected_guest_no') == null){ 
+                    console.log("redirecting to");
+                    redirectTo('/guest-selection');
                     return;
                 }
                 //redirect to guest selection.
                 //redirectTo('/guest-selection');
                 getCategories();
+                showSelectedGuest();
             });
 
 // function checkIfThereIsAnActiveOrder(){
@@ -120,12 +122,9 @@ function showSelectedGuest(){
         msg += selected_guest_no; 
         $('#selected-guest').text(msg).show();
     }else{
-
-        
         let msg = "";
         $('#selected-guest').text(msg).hide();
         console.log(selected_guest_no);
-        redirectTo('/guest-selection');
     }
 
 }

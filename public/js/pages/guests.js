@@ -4,12 +4,7 @@ $(document).ready(function () {
         redirectTo('/login');
         return;
     }
-
-    // console.log(getStorage('selected_guest_no').trim());
-    if (getStorage('selected_guest_no') != '') {
-        redirectTo('/');
-        return;
-    }
+    
     showGuestByTableId();
 });
 
@@ -39,13 +34,13 @@ function showGuestByTableId() {
                 // '</div> '
 
 
-                '<div class="col-md-2 col-sm-3 col-3" >'+
+                '<div class="col-md-2 col-sm-3 col-3 custom-col-pad"  >'+
                     '<div class="card guest" data-guest-no="'+ guest +'">'+
                         '<span class="badge badge-pill badge-success namber d-sm-block d-none">'+ guest +'</span>'+
                         '<img class="card-img-top img-fluid avatar d-none d-sm-block"  src="/assets/images/avatar.png" alt="guest image">'+
                             '<div class="card-body p-0">'+
                                 '<div class="bg-success rounded d-block d-sm-none py-2 px-2">'+
-                                    '<h2 class="m-0 text-center text-white">5</h2>'+
+                                    '<h2 class="m-0 text-center text-white">'+guest+'</h2>'+
                                 '</div>'+
                             '</div>'+
                     '</div>'+

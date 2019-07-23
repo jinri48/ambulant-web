@@ -30,6 +30,13 @@
         flex-basis: 400px !important ;
     }
    }
+
+   @media(max-width:575px){
+    .custom-col-pad{
+        padding-right: 2.5px !important;
+        padding-left: 2.5px !important;
+    }
+   }
    
 </style>
 @endsection
